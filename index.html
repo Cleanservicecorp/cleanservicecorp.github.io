@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Clean Service – Nettoyage pro à Marseille</title>
-  <meta name="description" content="Clean Service : nettoyage particuliers & entreprises à Marseille. 39+ clients satisfaits, devis gratuit, disponibilité 7j/7.">
+  <meta name="description" content="Clean Service : nettoyage particuliers & entreprises à Marseille. 140+ clients satisfaits, devis gratuit, disponibilité 7j/7.">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -84,10 +84,12 @@
     .hero-content h1 {
       font-size: 3rem; font-weight: 700; margin-bottom: 1rem;
       text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+      color: white;
     }
     .hero-content p {
       font-size: 1.2rem; max-width: 700px; margin: 0 auto 2rem;
       text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+      color: white; /* forcé en blanc */
     }
     .btn {
       display: inline-block; background: var(--primary); color: white;
@@ -270,7 +272,7 @@
 
   <!-- Statistiques -->
   <div class="container stats-row">
-    <div class="stat-card"><div class="stat-number">39+</div><div class="stat-label">Clients satisfaits</div></div>
+    <div class="stat-card"><div class="stat-number">140+</div><div class="stat-label">Clients satisfaits</div></div>
     <div class="stat-card"><div class="stat-number">24/7</div><div class="stat-label">Email disponible</div></div>
     <div class="stat-card"><div class="stat-number">7j/7</div><div class="stat-label">Téléphone</div></div>
   </div>
@@ -293,26 +295,28 @@
     <h2 class="section-title">Tarifs transparents</h2>
     <div class="pricing-container">
       <div class="price-card"><h3>Forfait Ponctuel</h3><div class="price">30€/h</div><p>Déplacement inclus à Marseille</p></div>
-      <div class="price-card"><h3>Engagement Mensuel</h3><div class="price">25€/h</div><p>À partir de 3h/mois</p></div>
+      <div class="price-card"><h3>Engagement Mensuel</h3><div class="price">25€/h</div><p>À partir de 3 heures par mois</p></div>
     </div>
     <div class="calculator">
       <h3>🧮 Estimez votre prix</h3>
       <div class="calc-form">
-        <select id="client-type"><option value="particulier">Particulier</option><option value="pro">Professionnel</option></select>
-        <select id="frequence"><option value="ponctuel">Ponctuel</option><option value="mensuel">Mensuel (≥3h)</option></select>
-        <input type="number" id="heures" placeholder="Heures" min="1" value="3">
+        <select id="frequence">
+          <option value="ponctuel">Ponctuel (30€/h)</option>
+          <option value="mensuel">Mensuel (25€/h dès 3h)</option>
+        </select>
+        <input type="number" id="heures" placeholder="Nombre d'heures" min="1" value="3">
       </div>
       <div class="calc-result" id="resultat"></div>
     </div>
   </section>
 
-  <!-- Témoignages (5 avis) -->
+  <!-- Témoignages (5 avis, avec Olivier à la place de l'ancien) -->
   <section id="testimonials" class="container">
     <h2 class="section-title">Ils nous font confiance</h2>
     <div class="testimonials-grid">
       <div class="testimonial-card"><div class="stars">★★★★★</div><div class="testimonial-text">"Très professionnel, ponctuel et efficace. Je recommande !"</div><div class="testimonial-author">— Sophie L.</div></div>
       <div class="testimonial-card"><div class="stars">★★★★★</div><div class="testimonial-text">"Service fiable, équipe à l'écoute. Un gain de temps précieux."</div><div class="testimonial-author">— Michel D.</div></div>
-      <div class="testimonial-card"><div class="stars">★★★★★</div><div class="testimonial-text">"Ils nettoient mes bureaux chaque semaine, toujours irréprochable."</div><div class="testimonial-author">— Claire B., gérante</div></div>
+      <div class="testimonial-card"><div class="stars">★★★★★</div><div class="testimonial-text">"Très satisfait. Si je devais faire un reproche, ce serait à moi-même à cause de mes retards de paiement."</div><div class="testimonial-author">— Olivier T.</div></div>
       <div class="testimonial-card"><div class="stars">★★★★★</div><div class="testimonial-text">"Rapide, soigneux et prix correct. Je les garde depuis 2 ans."</div><div class="testimonial-author">— Karim S.</div></div>
       <div class="testimonial-card"><div class="stars">★★★★★</div><div class="testimonial-text">"Excellent suivi, équipe sympathique. Je recommande vivement !"</div><div class="testimonial-author">— Émilie R.</div></div>
     </div>
@@ -324,7 +328,7 @@
     <div class="why-grid">
       <div class="why-card"><i>🧼</i><h3>Qualité pro</h3><p>Matériel et produits adaptés</p></div>
       <div class="why-card"><i>⏱️</i><h3>Rapidité</h3><p>Intervention sous 48h</p></div>
-      <div class="why-card"><i>🤝</i><h3>Confiance</h3><p>39+ clients fidélisés</p></div>
+      <div class="why-card"><i>🤝</i><h3>Confiance</h3><p>140+ clients fidélisés</p></div>
       <div class="why-card"><i>📞</i><h3>Dispo 7j/7</h3><p>Nous joignable tout le week-end</p></div>
     </div>
   </section>
@@ -361,7 +365,7 @@
 
   <footer>
     <p>© 2020 - 2026 Clean Service – Nettoyage professionnel à Marseille</p>
-    <p style="font-size:0.8rem; margin-top:0.5rem;">Email 24/7 | Téléphone 7j/7 | 39+ clients satisfaits</p>
+    <p style="font-size:0.8rem; margin-top:0.5rem;">Email 24/7 | Téléphone 7j/7 | 140+ clients satisfaits</p>
   </footer>
 
   <button class="floating-btn" id="floatingBtn">💬</button>
@@ -387,22 +391,19 @@
     const navLinks = document.getElementById('navLinks');
     burger.addEventListener('click', () => navLinks.classList.toggle('active'));
 
-    // Calculateur
+    // Calculateur (simplifié)
     function calculerPrix() {
-      const type = document.getElementById('client-type').value;
       const freq = document.getElementById('frequence').value;
       let heures = parseInt(document.getElementById('heures').value) || 1;
-      let tarifBase = (type === 'pro') ? 28 : 30;
-      if (freq === 'mensuel' && heures >= 3) tarifBase = (type === 'pro') ? 23 : 25;
-      const total = heures * tarifBase;
-      document.getElementById('resultat').innerHTML = `Estimation : ${total}€ (${heures}h × ${tarifBase}€/h) – ${freq === 'mensuel' ? 'abonnement mensuel' : 'ponctuel'}`;
+      let tarif = (freq === 'mensuel') ? 25 : 30;
+      const total = heures * tarif;
+      document.getElementById('resultat').innerHTML = `Estimation : ${total}€ (${heures}h × ${tarif}€/h) – ${freq === 'mensuel' ? 'abonnement mensuel (dès 3h)' : 'ponctuel'}`;
     }
-    document.getElementById('client-type').addEventListener('change', calculerPrix);
     document.getElementById('frequence').addEventListener('change', calculerPrix);
     document.getElementById('heures').addEventListener('input', calculerPrix);
     calculerPrix();
 
-    // Formspree (remplace ton ID si besoin, ici j'utilise l'ID que tu avais)
+    // Formspree (même ID)
     const FORMSPREE_ID = 'mlgzgvdl';
     async function handleSubmit(form, statusDiv) {
       const data = new FormData(form);
