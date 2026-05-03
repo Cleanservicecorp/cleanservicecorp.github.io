@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Clean Service – Nettoyage professionnel à Marseille</title>
   <style>
-    /* ----- RESET & BASE ----- */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Segoe UI', system-ui, sans-serif;
@@ -14,16 +13,11 @@
       scroll-behavior: smooth;
     }
     a { text-decoration: none; }
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+    .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+
     /* ----- HEADER ----- */
     header {
-      position: fixed;
-      top: 0;
-      width: 100%;
+      position: fixed; top: 0; width: 100%;
       background: rgba(255,255,255,0.95);
       backdrop-filter: blur(10px);
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
@@ -31,22 +25,14 @@
       padding: 0.8rem 0;
     }
     .header-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      display: flex; justify-content: space-between; align-items: center;
     }
     .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #007B8A;
+      display: flex; align-items: center; gap: 0.3rem;
+      font-size: 1.8rem; font-weight: 700; color: #007B8A;
     }
     .logo .star {
-      display: inline-block;
-      font-size: 2rem;
-      color: #00BFA5;
+      display: inline-block; font-size: 2rem; color: #00BFA5;
       animation: twinkle 1.5s infinite alternate;
     }
     @keyframes twinkle {
@@ -54,267 +40,155 @@
       100% { transform: scale(1.3); opacity: 1; }
     }
     nav a {
-      margin-left: 1.5rem;
-      color: #333;
-      font-weight: 500;
+      margin-left: 1.5rem; color: #333; font-weight: 500;
       transition: color 0.3s;
     }
     nav a:hover { color: #007B8A; }
 
-    /* ----- HERO ----- */
+    /* ----- HERO (sans filtre vert) ----- */
     .hero {
-      height: 100vh;
-      min-height: 600px;
-      background: linear-gradient(135deg, rgba(0,123,138,0.7), rgba(0,191,165,0.6)), 
+      height: 100vh; min-height: 600px;
+      background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)),
                   url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      margin-top: 70px;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; color: white; margin-top: 70px;
     }
     .hero-content h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+      font-size: 3rem; font-weight: 700; margin-bottom: 1rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
     }
     .hero-content p {
-      font-size: 1.3rem;
-      margin-bottom: 2rem;
-      max-width: 700px;
+      font-size: 1.3rem; margin-bottom: 2rem; max-width: 700px;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
     }
     .btn {
-      display: inline-block;
-      background: #00BFA5;
-      color: white;
-      padding: 12px 30px;
-      border-radius: 50px;
-      font-weight: 600;
-      transition: all 0.3s;
-      margin: 0 10px;
-      border: 2px solid transparent;
+      display: inline-block; background: #00BFA5; color: white;
+      padding: 12px 30px; border-radius: 50px; font-weight: 600;
+      transition: all 0.3s; margin: 0 10px; border: 2px solid transparent;
     }
-    .btn-outline {
-      background: transparent;
-      border: 2px solid white;
-    }
-    .btn:hover {
-      background: #007B8A;
-      border-color: #007B8A;
-    }
+    .btn-outline { background: transparent; border: 2px solid white; }
+    .btn:hover { background: #007B8A; border-color: #007B8A; }
 
     /* ----- SECTIONS ----- */
-    section {
-      padding: 80px 0;
-    }
+    section { padding: 80px 0; }
     .section-title {
-      text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 3rem;
-      color: #007B8A;
-      position: relative;
+      text-align: center; font-size: 2.5rem; margin-bottom: 3rem;
+      color: #007B8A; position: relative;
     }
     .section-title::after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 4px;
-      background: #00BFA5;
-      margin: 1rem auto 0;
+      content: ''; display: block; width: 60px; height: 4px;
+      background: #00BFA5; margin: 1rem auto 0;
     }
     .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem; margin-top: 3rem;
     }
     .service-card {
-      background: #f8fdfc;
-      border-radius: 20px;
-      padding: 2rem;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-      transition: transform 0.3s;
+      background: #f8fdfc; border-radius: 20px; padding: 2rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05); transition: transform 0.3s;
       border-left: 5px solid #00BFA5;
     }
     .service-card:hover { transform: translateY(-5px); }
-    .service-card h3 {
-      color: #007B8A;
-      margin-bottom: 1rem;
-    }
-    .service-card ul {
-      list-style: none;
-    }
+    .service-card h3 { color: #007B8A; margin-bottom: 1rem; }
+    .service-card ul { list-style: none; }
     .service-card li {
-      padding: 0.3rem 0;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      padding: 0.3rem 0; display: flex; align-items: center; gap: 0.5rem;
     }
-    .service-card li::before {
-      content: '✔';
-      color: #00BFA5;
-      font-weight: bold;
-    }
+    .service-card li::before { content: '✔'; color: #00BFA5; font-weight: bold; }
 
     /* ----- TARIFS & CALCULATEUR ----- */
     .pricing-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
+      display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;
     }
     .price-card {
-      background: white;
-      border-radius: 15px;
-      padding: 2rem;
-      text-align: center;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-      flex: 1 1 250px;
+      background: white; border-radius: 15px; padding: 2rem; text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08); flex: 1 1 250px;
       border-top: 6px solid #00BFA5;
     }
     .price-card h3 { color: #007B8A; font-size: 1.5rem; }
     .price {
-      font-size: 2.5rem;
-      font-weight: bold;
-      color: #00BFA5;
-      margin: 1rem 0;
+      font-size: 2.5rem; font-weight: bold; color: #00BFA5; margin: 1rem 0;
     }
     .calculator {
-      background: #eefaf8;
-      border-radius: 15px;
-      padding: 2rem;
-      margin-top: 3rem;
+      background: #eefaf8; border-radius: 15px; padding: 2rem; margin-top: 3rem;
     }
     .calculator h3 { color: #007B8A; margin-bottom: 1.5rem; }
     .calc-form {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
+      display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;
     }
     .calc-form select, .calc-form input {
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 1rem;
+      padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem;
     }
-    .calc-result {
-      margin-top: 1.5rem;
-      font-size: 1.2rem;
-      font-weight: 600;
-    }
+    .calc-result { margin-top: 1.5rem; font-size: 1.2rem; font-weight: 600; }
 
     /* ----- À PROPOS ----- */
     .about-text {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-      font-size: 1.1rem;
-      background: #f9fefe;
-      padding: 2rem;
-      border-radius: 12px;
+      max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1rem;
+      background: #f9fefe; padding: 2rem; border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.04);
     }
 
     /* ----- CONTACT ----- */
     .contact-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 3rem;
-      align-items: flex-start;
+      display: flex; flex-wrap: wrap; gap: 3rem; align-items: flex-start;
     }
     .contact-info {
-      flex: 1 1 300px;
-      background: #f0f9f7;
-      padding: 2rem;
-      border-radius: 12px;
+      flex: 1 1 300px; background: #f0f9f7; padding: 2rem; border-radius: 12px;
     }
-    .contact-form {
-      flex: 1 1 400px;
-    }
+    .contact-form { flex: 1 1 400px; }
     .contact-form input, .contact-form textarea, .contact-form select {
-      width: 100%;
-      padding: 12px;
-      margin-top: 0.8rem;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      font-size: 1rem;
+      width: 100%; padding: 12px; margin-top: 0.8rem;
+      border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;
     }
     .contact-form button {
-      background: #00BFA5;
-      color: white;
-      border: none;
-      padding: 12px 25px;
-      border-radius: 30px;
-      font-size: 1rem;
-      cursor: pointer;
-      margin-top: 1rem;
+      background: #00BFA5; color: white; border: none; padding: 12px 25px;
+      border-radius: 30px; font-size: 1rem; cursor: pointer; margin-top: 1rem;
       transition: 0.3s;
     }
     .contact-form button:hover { background: #007B8A; }
     #form-status { margin-top: 1rem; font-weight: bold; }
+    .whatsapp-link {
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      background: #25D366; color: white; padding: 0.5rem 1rem; border-radius: 20px;
+      margin-top: 0.5rem; font-weight: 500; transition: 0.3s;
+    }
+    .whatsapp-link:hover { background: #128C7E; }
 
     /* ----- BOUTON FLOTTANT ----- */
     .floating-btn {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background: #00BFA5;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      font-size: 28px;
-      cursor: pointer;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-      z-index: 1001;
-      transition: 0.3s;
+      position: fixed; bottom: 25px; right: 25px;
+      background: #00BFA5; color: white; border: none; border-radius: 50%;
+      width: 60px; height: 60px; font-size: 28px; cursor: pointer;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2); z-index: 1001; transition: 0.3s;
     }
     .floating-btn:hover { background: #007B8A; transform: scale(1.1); }
 
     /* MODALE */
     .modal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5);
-      align-items: center;
-      justify-content: center;
+      display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5); align-items: center; justify-content: center;
       z-index: 2000;
     }
     .modal.active { display: flex; }
     .modal-dialog {
-      background: white;
-      padding: 2rem;
-      border-radius: 15px;
-      width: 90%;
-      max-width: 500px;
-      position: relative;
+      background: white; padding: 2rem; border-radius: 15px;
+      width: 90%; max-width: 500px; position: relative;
     }
     .modal-close {
-      position: absolute;
-      top: 10px; right: 15px;
-      font-size: 2rem;
-      cursor: pointer;
-      color: #999;
+      position: absolute; top: 10px; right: 15px; font-size: 2rem;
+      cursor: pointer; color: #999;
     }
 
     /* FOOTER */
     footer {
-      background: #007B8A;
-      color: white;
-      text-align: center;
-      padding: 25px;
+      background: #007B8A; color: white; text-align: center; padding: 25px;
       margin-top: 40px;
     }
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
       .hero-content h1 { font-size: 2rem; }
-      nav { display: none; } /* Simplifié : pas de menu hamburger, les ancres fonctionnent */
+      nav { display: none; }
       .header-inner { justify-content: center; }
     }
   </style>
@@ -335,7 +209,7 @@
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- HERO (image naturelle, pas de vert) -->
   <section class="hero" id="home">
     <div class="hero-content container">
       <h1>Clean Service</h1>
@@ -422,8 +296,13 @@
     <div class="contact-wrapper">
       <div class="contact-info">
         <h3>Coordonnées</h3>
-        <p>📞 06 00 00 00 00</p>
-        <p>📧 EMAILPROCLEANSERVICE@gmail.com</p>
+        <p>📞 <a href="tel:+33768897892">+33 7 68 89 78 92</a></p>
+        <p>📧 <a href="mailto:EMAILPROCLEANSERVICE@gmail.com">EMAILPROCLEANSERVICE@gmail.com</a></p>
+        <p>
+          <a class="whatsapp-link" href="https://wa.me/33768897892" target="_blank" rel="noopener">
+            💬 WhatsApp
+          </a>
+        </p>
         <p>📍 Marseille et alentours</p>
       </div>
       <form class="contact-form" id="formulaire-contact">
@@ -443,7 +322,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2025 Clean Service – Tous droits réservés</p>
+    <p>© 2020 - 2026 Clean Service – La propreté est notre engagement.</p>
   </footer>
 
   <!-- BOUTON FLOTTANT -->
@@ -477,7 +356,7 @@
       let heures = parseInt(document.getElementById('heures').value);
       if (isNaN(heures) || heures < 1) heures = 1;
 
-      let tarifHoraire = 30; // par défaut ponctuel
+      let tarifHoraire = 30;
       if (freq === 'mensuel' && heures >= 3) {
         tarifHoraire = 25;
       } else if (freq === 'mensuel' && heures < 3) {
@@ -501,7 +380,7 @@
     modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('active'); });
 
     // ---- Gestion envoi formulaire (Formspree) ----
-    const FORMSPREE_ID = 'mlgzgvdl'; // <-- Votre ID Formspree
+    const FORMSPREE_ID = 'mlgzgvdl';
     async function handleFormSubmit(form, statusDiv) {
       const data = new FormData(form);
       try {
