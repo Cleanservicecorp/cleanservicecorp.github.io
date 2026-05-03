@@ -1,1 +1,534 @@
-bonjour
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clean Service – Nettoyage professionnel à Marseille</title>
+  <style>
+    /* ----- RESET & BASE ----- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    a { text-decoration: none; }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    /* ----- HEADER ----- */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      z-index: 999;
+      padding: 0.8rem 0;
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #007B8A;
+    }
+    .logo .star {
+      display: inline-block;
+      font-size: 2rem;
+      color: #00BFA5;
+      animation: twinkle 1.5s infinite alternate;
+    }
+    @keyframes twinkle {
+      0% { transform: scale(1); opacity: 0.7; }
+      100% { transform: scale(1.3); opacity: 1; }
+    }
+    nav a {
+      margin-left: 1.5rem;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: #007B8A; }
+
+    /* ----- HERO ----- */
+    .hero {
+      height: 100vh;
+      min-height: 600px;
+      background: linear-gradient(135deg, rgba(0,123,138,0.7), rgba(0,191,165,0.6)), 
+                  url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      margin-top: 70px;
+    }
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    }
+    .hero-content p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      max-width: 700px;
+    }
+    .btn {
+      display: inline-block;
+      background: #00BFA5;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s;
+      margin: 0 10px;
+      border: 2px solid transparent;
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid white;
+    }
+    .btn:hover {
+      background: #007B8A;
+      border-color: #007B8A;
+    }
+
+    /* ----- SECTIONS ----- */
+    section {
+      padding: 80px 0;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      color: #007B8A;
+      position: relative;
+    }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: #00BFA5;
+      margin: 1rem auto 0;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .service-card {
+      background: #f8fdfc;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+      border-left: 5px solid #00BFA5;
+    }
+    .service-card:hover { transform: translateY(-5px); }
+    .service-card h3 {
+      color: #007B8A;
+      margin-bottom: 1rem;
+    }
+    .service-card ul {
+      list-style: none;
+    }
+    .service-card li {
+      padding: 0.3rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .service-card li::before {
+      content: '✔';
+      color: #00BFA5;
+      font-weight: bold;
+    }
+
+    /* ----- TARIFS & CALCULATEUR ----- */
+    .pricing-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .price-card {
+      background: white;
+      border-radius: 15px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      flex: 1 1 250px;
+      border-top: 6px solid #00BFA5;
+    }
+    .price-card h3 { color: #007B8A; font-size: 1.5rem; }
+    .price {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #00BFA5;
+      margin: 1rem 0;
+    }
+    .calculator {
+      background: #eefaf8;
+      border-radius: 15px;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    .calculator h3 { color: #007B8A; margin-bottom: 1.5rem; }
+    .calc-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .calc-form select, .calc-form input {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    .calc-result {
+      margin-top: 1.5rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    /* ----- À PROPOS ----- */
+    .about-text {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 1.1rem;
+      background: #f9fefe;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    }
+
+    /* ----- CONTACT ----- */
+    .contact-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      align-items: flex-start;
+    }
+    .contact-info {
+      flex: 1 1 300px;
+      background: #f0f9f7;
+      padding: 2rem;
+      border-radius: 12px;
+    }
+    .contact-form {
+      flex: 1 1 400px;
+    }
+    .contact-form input, .contact-form textarea, .contact-form select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    .contact-form button {
+      background: #00BFA5;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: 0.3s;
+    }
+    .contact-form button:hover { background: #007B8A; }
+    #form-status { margin-top: 1rem; font-weight: bold; }
+
+    /* ----- BOUTON FLOTTANT ----- */
+    .floating-btn {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #00BFA5;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 28px;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+      z-index: 1001;
+      transition: 0.3s;
+    }
+    .floating-btn:hover { background: #007B8A; transform: scale(1.1); }
+
+    /* MODALE */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+    }
+    .modal.active { display: flex; }
+    .modal-dialog {
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 500px;
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 10px; right: 15px;
+      font-size: 2rem;
+      cursor: pointer;
+      color: #999;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #007B8A;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 40px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero-content h1 { font-size: 2rem; }
+      nav { display: none; } /* Simplifié : pas de menu hamburger, les ancres fonctionnent */
+      .header-inner { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container header-inner">
+      <div class="logo">
+        Clean Service <span class="star">★</span>
+      </div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#tarifs">Tarifs</a>
+        <a href="#about">À propos</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content container">
+      <h1>Clean Service</h1>
+      <p>Nous nous adaptons à tous vos besoins, qu’ils soient petits ou grands.<br>Nettoyage professionnel pour particuliers et entreprises à Marseille et alentours.</p>
+      <a href="#services" class="btn">Nos services</a>
+      <a href="#tarifs" class="btn btn-outline">Estimer mon prix</a>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="container">
+    <h2 class="section-title">Nos prestations</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>🏠 Particuliers</h3>
+        <ul>
+          <li>Ménage courant (hebdo, bi-mensuel)</li>
+          <li>Grand ménage / remise en état</li>
+          <li>Nettoyage des vitres</li>
+          <li>Nettoyage après déménagement</li>
+          <li>Repassage</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <h3>🏢 Professionnels</h3>
+        <ul>
+          <li>Bureaux & espaces tertiaires</li>
+          <li>Commerces & boutiques</li>
+          <li>Copropriétés (parties communes)</li>
+          <li>Cabinets médicaux (normes hygiène)</li>
+          <li>Fin de chantier</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- TARIFS & CALCULATEUR -->
+  <section id="tarifs" class="container">
+    <h2 class="section-title">Tarifs transparents</h2>
+    <div class="pricing-container">
+      <div class="price-card">
+        <h3>Forfait Ponctuel</h3>
+        <div class="price">30€/h</div>
+        <p>Déplacement inclus dans Marseille<br>Idéal pour un dépannage ou un essai</p>
+      </div>
+      <div class="price-card">
+        <h3>Engagement Mensuel</h3>
+        <div class="price">25€/h</div>
+        <p>À partir de 3 heures par mois<br>Régularité et tarif avantageux</p>
+      </div>
+    </div>
+
+    <!-- Calculateur -->
+    <div class="calculator">
+      <h3>🧮 Estimez votre prix</h3>
+      <div class="calc-form">
+        <select id="client-type">
+          <option value="particulier">Particulier</option>
+          <option value="pro">Professionnel</option>
+        </select>
+        <select id="frequence">
+          <option value="ponctuel">Ponctuel</option>
+          <option value="mensuel">Mensuel (≥3h)</option>
+        </select>
+        <input type="number" id="heures" placeholder="Nombre d'heures" min="1" value="3">
+      </div>
+      <div class="calc-result" id="resultat"></div>
+    </div>
+  </section>
+
+  <!-- À PROPOS -->
+  <section id="about" class="container">
+    <h2 class="section-title">À propos de Clean Service</h2>
+    <div class="about-text">
+      <p>Une expertise reconnue, une fidélité construite dans la durée.</p>
+      <p>Il y a 5 ans, notre entreprise de nettoyage a bâti sa réputation sur un principe simple : un service irréprochable, livré avec constance et professionnalisme.</p>
+      <p>La preuve de notre engagement ? La durée de nos relations clients. Beaucoup d’entre eux nous accompagnent depuis 5 ans – certains même depuis notre création. Cette fidélité n’est jamais acquise : elle se mérite chaque jour par l’écoute, la réactivité, et des prestations parfaitement adaptées aux besoins spécifiques de chaque site (bureaux, commerces, établissements recevant du public, locaux industriels, etc.).</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="container">
+    <h2 class="section-title">Contactez-nous</h2>
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <h3>Coordonnées</h3>
+        <p>📞 06 00 00 00 00</p>
+        <p>📧 EMAILPROCLEANSERVICE@gmail.com</p>
+        <p>📍 Marseille et alentours</p>
+      </div>
+      <form class="contact-form" id="formulaire-contact">
+        <input type="text" name="nom" placeholder="Nom *" required>
+        <input type="email" name="email" placeholder="Email *" required>
+        <input type="tel" name="telephone" placeholder="Téléphone">
+        <select name="type_client">
+          <option value="particulier">Particulier</option>
+          <option value="professionnel">Professionnel</option>
+        </select>
+        <textarea name="message" rows="4" placeholder="Votre message..."></textarea>
+        <button type="submit">Envoyer la demande</button>
+        <div id="form-status"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Clean Service – Tous droits réservés</p>
+  </footer>
+
+  <!-- BOUTON FLOTTANT -->
+  <button class="floating-btn" id="btn-flottant">💬</button>
+
+  <!-- MODALE CONTACT -->
+  <div class="modal" id="modal-contact">
+    <div class="modal-dialog">
+      <span class="modal-close" id="modal-close">&times;</span>
+      <h3>Demande rapide</h3>
+      <form id="formulaire-modal">
+        <input type="text" name="nom" placeholder="Nom *" required>
+        <input type="email" name="email" placeholder="Email *" required>
+        <input type="tel" name="telephone" placeholder="Téléphone">
+        <select name="type_client">
+          <option value="particulier">Particulier</option>
+          <option value="professionnel">Professionnel</option>
+        </select>
+        <textarea name="message" rows="3" placeholder="Décrivez brièvement vos besoins"></textarea>
+        <button type="submit">Envoyer</button>
+        <div id="modal-status" style="margin-top:1rem;"></div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // ---- Calculateur de prix ----
+    function calculerPrix() {
+      const type = document.getElementById('client-type').value;
+      const freq = document.getElementById('frequence').value;
+      let heures = parseInt(document.getElementById('heures').value);
+      if (isNaN(heures) || heures < 1) heures = 1;
+
+      let tarifHoraire = 30; // par défaut ponctuel
+      if (freq === 'mensuel' && heures >= 3) {
+        tarifHoraire = 25;
+      } else if (freq === 'mensuel' && heures < 3) {
+        tarifHoraire = 30;
+      }
+      const total = heures * tarifHoraire;
+      document.getElementById('resultat').innerHTML = 
+        `Estimation : <strong>${total}€</strong> (${heures}h × ${tarifHoraire}€/h) - ${freq === 'mensuel' ? 'par mois' : 'intervention ponctuelle'}`;
+    }
+    document.getElementById('client-type').addEventListener('change', calculerPrix);
+    document.getElementById('frequence').addEventListener('change', calculerPrix);
+    document.getElementById('heures').addEventListener('input', calculerPrix);
+    window.addEventListener('load', calculerPrix);
+
+    // ---- Modale et bouton flottant ----
+    const btnFlottant = document.getElementById('btn-flottant');
+    const modal = document.getElementById('modal-contact');
+    const modalClose = document.getElementById('modal-close');
+    btnFlottant.addEventListener('click', () => modal.classList.add('active'));
+    modalClose.addEventListener('click', () => modal.classList.remove('active'));
+    modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('active'); });
+
+    // ---- Gestion envoi formulaire (Formspree) ----
+    const FORMSPREE_ID = 'mlgzgvdl'; // <-- Votre ID Formspree
+    async function handleFormSubmit(form, statusDiv) {
+      const data = new FormData(form);
+      try {
+        const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+          statusDiv.textContent = '✅ Message envoyé avec succès !';
+          form.reset();
+          setTimeout(() => { statusDiv.textContent = ''; modal.classList.remove('active'); }, 4000);
+        } else {
+          throw new Error('Erreur réseau');
+        }
+      } catch (error) {
+        statusDiv.textContent = '❌ Erreur. Veuillez réessayer.';
+      }
+    }
+    document.getElementById('formulaire-contact').addEventListener('submit', function(e) {
+      e.preventDefault();
+      handleFormSubmit(this, document.getElementById('form-status'));
+    });
+    document.getElementById('formulaire-modal').addEventListener('submit', function(e) {
+      e.preventDefault();
+      handleFormSubmit(this, document.getElementById('modal-status'));
+    });
+  </script>
+</body>
+</html>
